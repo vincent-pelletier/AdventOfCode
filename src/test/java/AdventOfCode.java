@@ -30,6 +30,42 @@ public class AdventOfCode {
 		print(increment);
 	}
 
+	@Test
+	public void day2() {
+		printHeader();
+		List<String> steps = FileUtil.readFileAsStrings("day2.txt");
+
+		int position = 0;
+		int depth = 0;
+		for(String step : steps) {
+			if(step.startsWith("forward")) {
+				position += Integer.valueOf(step.replace("forward ", ""));
+			} else if(step.startsWith("up")) {
+				depth -= Integer.valueOf(step.replace("up ", ""));
+			} else if(step.startsWith("down")) {
+				depth += Integer.valueOf(step.replace("down ", ""));
+			}
+		}
+		print(position + " x " + depth + " = " + position * depth);
+
+		br();
+
+		position = 0;
+		depth = 0;
+		int aim = 0;
+		for(String step : steps) {
+			if(step.startsWith("forward")) {
+				position += Integer.valueOf(step.replace("forward ", ""));
+				depth += aim * Integer.valueOf(step.replace("forward ", ""));
+			} else if(step.startsWith("up")) {
+				aim -= Integer.valueOf(step.replace("up ", ""));
+			} else if(step.startsWith("down")) {
+				aim += Integer.valueOf(step.replace("down ", ""));
+			}
+		}
+		print(position + " x " + depth + " = " + position * depth);
+	}
+
 	private void print(Object o) {
 		System.out.println(o);
 	}
