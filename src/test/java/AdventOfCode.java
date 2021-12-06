@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class AdventOfCode {
 
@@ -26,6 +27,10 @@ public class AdventOfCode {
 
 	protected List<Integer> readFileAsInts(String filename) {
 		return readFileAsStrings(filename).stream().map(Integer::valueOf).collect(Collectors.toList());
+	}
+
+	protected List<Integer> readSingleLineAsInts(String filename) {
+		return Stream.of(readFileAsStrings(filename).get(0).split(",")).map(Integer::valueOf).collect(Collectors.toList());
 	}
 
 	protected void print(Object o) {
