@@ -12,7 +12,7 @@ public class Day4 extends AdventOfCode {
 		printHeader();
 		List<String> input = readFileAsStrings("day4.txt");
 
-		List<Integer> nums = Stream.of(input.get(0).split(",")).map(Integer::valueOf).collect(Collectors.toList());
+		List<Integer> nums = csv2list(input.get(0));
 
 		List<Bingo> grids = new ArrayList<>();
 		for(int i = 1; i < input.size(); i += 6) {

@@ -31,13 +31,13 @@ public class Day3 extends AdventOfCode {
 
 		br();
 
-		gamma = ""; // oxygen generator
+		String oxygen = "";
 		for(int i = 0; i < binaries.get(0).length(); i++) {
 			int ones = 0;
 			int zeroes = 0;
 			String last = "";
 			for(String binary : binaries) {
-				if(!binary.startsWith(gamma)) {
+				if(!binary.startsWith(oxygen)) {
 					continue;
 				}
 				last = binary;
@@ -48,24 +48,24 @@ public class Day3 extends AdventOfCode {
 				}
 			}
 			if(ones + zeroes == 1) {
-				gamma = last;
+				oxygen = last;
 				break;
 			}
 			if(ones == zeroes) {
-				gamma += "1";
+				oxygen += "1";
 			} else if(ones > zeroes) {
-				gamma += "1";
+				oxygen += "1";
 			} else {
-				gamma += "0";
+				oxygen += "0";
 			}
 		}
-		epsilon = ""; // co2 scrubber
+		String co2 = "";
 		for(int i = 0; i < binaries.get(0).length(); i++) {
 			int ones = 0;
 			int zeroes = 0;
 			String last = "";
 			for(String binary : binaries) {
-				if(!binary.startsWith(epsilon)) {
+				if(!binary.startsWith(co2)) {
 					continue;
 				}
 				last = binary;
@@ -76,17 +76,17 @@ public class Day3 extends AdventOfCode {
 				}
 			}
 			if(ones + zeroes == 1) {
-				epsilon = last;
+				co2 = last;
 				break;
 			}
 			if(zeroes == ones) {
-				epsilon += "0";
+				co2 += "0";
 			} else if(zeroes > ones) {
-				epsilon += "1";
+				co2 += "1";
 			} else {
-				epsilon += "0";
+				co2 += "0";
 			}
 		}
-		print(bin2dec(gamma) + " x " + bin2dec(epsilon) + " = " + bin2dec(gamma) * bin2dec(epsilon));
+		print(bin2dec(oxygen) + " x " + bin2dec(co2) + " = " + bin2dec(oxygen) * bin2dec(co2));
 	}
 }

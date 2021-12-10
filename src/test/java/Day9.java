@@ -44,12 +44,12 @@ public class Day9 extends AdventOfCode {
 				if(isLow) {
 					sum += grid[i][j] + 1;
 					lowPts.add(new Point(i, j));
-					//System.out.print("[" + grid[i][j] + "]");
+					// print2("[" + grid[i][j] + "]");
 				} else {
-					//System.out.print(" " + grid[i][j] + " ");
+					// print2(" " + grid[i][j] + " ");
 				}
 			}
-			//print("");
+			// print("");
 		}
 		print(sum);
 

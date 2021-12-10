@@ -57,7 +57,6 @@ public class Day8 extends AdventOfCode {
 		public SevenSegmentDecoder(String[] signalPatterns) {
 			for(String signal : signalPatterns) {
 				if(signal.length() == 2) { // 1
-					// c and f
 					c = "" + signal.charAt(0);
 					f = "" + signal.charAt(1);
 				}

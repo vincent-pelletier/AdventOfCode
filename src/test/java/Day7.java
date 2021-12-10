@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
@@ -9,8 +10,8 @@ public class Day7 extends AdventOfCode {
 		printHeader();
 		List<Integer> crabs = readSingleLineAsInts("day7.txt");
 
-		int max = crabs.stream().max(Integer::compareTo).get();
-		int min = crabs.stream().min(Integer::compareTo).get();
+		int max = Collections.max(crabs);
+		int min = Collections.min(crabs);
 		int lowestFuel = Integer.MAX_VALUE;
 		for(int i = min; i < max; i++) {
 			int fuel = 0;

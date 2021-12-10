@@ -19,7 +19,7 @@ public class AdventOfCode {
 			}
 			reader.close();
 		} catch (FileNotFoundException e) {
-			System.out.println(filename + " not found");
+			print(filename + " not found");
 			throw new IllegalArgumentException();
 		}
 		return strings;
@@ -30,11 +30,19 @@ public class AdventOfCode {
 	}
 
 	protected List<Integer> readSingleLineAsInts(String filename) {
-		return Stream.of(readFileAsStrings(filename).get(0).split(",")).map(Integer::valueOf).collect(Collectors.toList());
+		return csv2list(readFileAsStrings(filename).get(0));
+	}
+
+	protected List<Integer> csv2list(String csv) {
+		return Stream.of(csv.split(",")).map(Integer::valueOf).collect(Collectors.toList());
 	}
 
 	protected void print(Object o) {
 		System.out.println(o);
+	}
+
+	protected void print2(Object o) {
+		System.out.print(o);
 	}
 
 	protected void printHeader() {

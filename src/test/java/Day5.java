@@ -29,12 +29,12 @@ public class Day5 extends AdventOfCode {
 		int over2 = 0;
 		for(int i = 0; i <= maxX; i++) {
 			for(int j = 0; j <= maxY; j++) {
-				// System.out.print(String.valueOf(grid[j][i]).replace("0", "."));
+				// print2(String.valueOf(grid[j][i]).replace("0", "."));
 				if(grid[i][j] >= 2) {
 					over2++;
 				}
 			}
-			// System.out.println("");
+			// print("");
 		}
 		print(over2);
 	}
