@@ -48,7 +48,7 @@ public class AdventOfCode {
 	protected void printHeader() {
 		String day = Thread.currentThread().getStackTrace()[2].getMethodName();
 		print("[" + String.valueOf(day.charAt(0)).toUpperCase() +
-				day.substring(1, 3) + " " + day.charAt(day.length() - 1) + "]");
+				day.substring(1, 3) + " " + day.substring(3, day.length()) + "]");
 	}
 
 	protected void br() {
