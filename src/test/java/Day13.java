@@ -12,7 +12,7 @@ public class Day13 extends AdventOfCode {
 		printHeader();
 		List<String> input = readFileAsStrings("day13.txt");
 
-		List<Point> pts = new ArrayList<>();
+		List<Point13> pts = new ArrayList<>();
 		boolean fold = false;
 		List<String> folds = new ArrayList<>();
 		for(String s : input) {
@@ -23,11 +23,11 @@ public class Day13 extends AdventOfCode {
 			if(fold) {
 				folds.add(s.replace("fold along ", ""));
 			} else {
-				pts.add(new Point(Integer.valueOf(s.split(",")[0]), Integer.valueOf(s.split(",")[1])));
+				pts.add(new Point13(Integer.valueOf(s.split(",")[0]), Integer.valueOf(s.split(",")[1])));
 			}
 		}
 		for(String f : folds) {
-			for(Point pt : pts) {
+			for(Point13 pt : pts) {
 				if(f.startsWith("x")) {
 					pt.foldX(Integer.valueOf(f.replace("x=", "")));
 				} else {
@@ -40,12 +40,12 @@ public class Day13 extends AdventOfCode {
 				fold = false;
 			}
 		}
-		Set<Point> finalPts = new HashSet<>(pts);
+		Set<Point13> finalPts = new HashSet<>(pts);
 		int maxX = finalPts.stream().mapToInt(p -> p.x).max().getAsInt();
 		int maxY = finalPts.stream().mapToInt(p -> p.y).max().getAsInt();
 		for(int j = 0; j <= maxY; j++) {
 			for(int i = 0; i <= maxX; i++) {
-				if(finalPts.contains(new Point(i, j))) {
+				if(finalPts.contains(new Point13(i, j))) {
 					print2("#");
 				} else {
 					print2("_");
@@ -55,13 +55,10 @@ public class Day13 extends AdventOfCode {
 		}
 	}
 
-	private class Point {
-		public int x;
-		public int y;
+	private class Point13 extends Point {
 
-		public Point(int x, int y) {
-			this.x = x;
-			this.y = y;
+		public Point13(int x, int y) {
+			super(x, y);
 		}
 
 		public void foldX(int foldX) {
@@ -74,17 +71,6 @@ public class Day13 extends AdventOfCode {
 			if(y > foldY) {
 				y = y - (y - foldY) * 2;
 			}
-		}
-
-		@Override
-		public boolean equals(Object o) {
-			Point other = (Point)o;
-			return x == other.x && y == other.y;
-		}
-
-		@Override
-		public int hashCode() {
-			return x * 1000 + y;
 		}
 	}
 }

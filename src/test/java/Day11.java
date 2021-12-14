@@ -97,24 +97,4 @@ public class Day11 extends AdventOfCode {
 			}
 		}
 	}
-
-	private class Point {
-		public final int x, y;
-
-		public Point(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
-
-		@Override
-		public boolean equals(Object o) {
-			Point other = (Point)o;
-			return x == other.x && y == other.y;
-		}
-
-		@Override
-		public int hashCode() {
-			return x * 100 + y;
-		}
-	}
 }

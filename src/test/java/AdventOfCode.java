@@ -58,4 +58,25 @@ public class AdventOfCode {
 	protected int bin2dec(String binary) {
 		return Integer.parseInt(binary, 2);
 	}
+
+	protected class Point {
+		public int x;
+		public int y;
+
+		public Point(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+
+		@Override
+		public boolean equals(Object o) {
+			Point other = (Point)o;
+			return x == other.x && y == other.y;
+		}
+
+		@Override
+		public int hashCode() {
+			return x * 1000 + y;
+		}
+	}
 }
