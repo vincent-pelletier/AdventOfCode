@@ -1,5 +1,8 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -104,6 +107,42 @@ public class AdventOfCode {
 				print2(grid[i][j]);
 			}
 			print("");
+		}
+	}
+
+	protected void printGrid(int[][] grid, List<Point> nodesToHighlight) {
+		int maxX = grid.length;
+		int maxY = grid[0].length;
+		for(int i = 0; i < maxX; i++) {
+			for(int j = 0; j < maxY; j++) {
+				if(nodesToHighlight.contains(new Point(i, j))) {
+					print2("[" + grid[i][j] + "]");
+				} else {
+					print2(" " + grid[i][j] + " ");
+				}
+			}
+			print("");
+		}
+	}
+
+	protected void printGridToFile(int[][] grid, List<Point> nodesToHighlight, String filename) {
+		int maxX = grid.length;
+		int maxY = grid[0].length;
+		try(BufferedWriter writer = new BufferedWriter(new FileWriter(prefix + filename))) {
+			for(int i = 0; i < maxX; i++) {
+				String s = "";
+				for(int j = 0; j < maxY; j++) {
+					if(nodesToHighlight.contains(new Point(i, j))) {
+						s += ("[" + grid[i][j] + "]");
+
+					} else {
+						s += (" " + grid[i][j] + " ");
+					}
+				}
+				writer.write(s + "\n");
+			}
+		} catch (IOException e) {
+			print("Failed to print to file " + filename);
 		}
 	}
 

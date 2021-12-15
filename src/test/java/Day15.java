@@ -42,29 +42,13 @@ public class Day15 extends AdventOfCode {
 			}
 		}
 
-		Graph graph = new Graph();
-		for(Node n : nodes.values()) {
-			graph.addNode(n);
-		}
+		calculateShortestPathFromSource(nodes.get(new Point(0, 0)));
 
-		graph = calculateShortestPathFromSource(graph, nodes.get(new Point(0, 0)));
-
-		boolean printPath = true;
-		if(printPath) {
-			List<Point> shortestPath = nodes.get(new Point(maxX-1, maxY-1)).shortestPath.stream()
-					.map(n -> new Point(Integer.valueOf(n.name.split(",")[0]), Integer.valueOf(n.name.split(",")[1])))
-					.collect(Collectors.toList());
-			for(int i = 0; i < maxX; i++) {
-				for(int j = 0; j < maxY; j++) {
-					if(shortestPath.contains(new Point(i, j)) || (i == maxX - 1 && j == maxY - 1)) {
-						print2("[" + grid[i][j] + "]");
-					} else {
-						print2(" " + grid[i][j] + " ");
-					}
-				}
-				print("");
-			}
-		}
+		List<Point> shortestPath = nodes.get(new Point(maxX-1, maxY-1)).shortestPath.stream()
+				.map(n -> new Point(Integer.valueOf(n.name.split(",")[0]), Integer.valueOf(n.name.split(",")[1])))
+				.collect(Collectors.toList());
+		shortestPath.add(new Point(maxX - 1, maxY - 1));
+		printGrid(grid, shortestPath);
 		print(nodes.get(new Point(maxX-1, maxY-1)).distance);
 
 		br();
@@ -82,8 +66,6 @@ public class Day15 extends AdventOfCode {
 				nodes.put(new Point(i, j), new Node(i + "," + j));
 			}
 		}
-		bigGrid[0][0] = 0;
-
 		//printGrid(bigGrid);
 
 		for(int i = 0; i < maxX * factor; i++) {
@@ -103,38 +85,14 @@ public class Day15 extends AdventOfCode {
 			}
 		}
 
-		graph = new Graph();
-		for(Node n : nodes.values()) {
-			graph.addNode(n);
-		}
+		calculateShortestPathFromSource(nodes.get(new Point(0, 0)));
 
-		graph = calculateShortestPathFromSource(graph, nodes.get(new Point(0, 0)));
-
-		printPath = false;
-		if(printPath) {
-			List<Point> shortestPath = nodes.get(new Point((maxX * factor) - 1, (maxY * factor) - 1)).shortestPath.stream()
-				.map(n -> new Point(Integer.valueOf(n.name.split(",")[0]), Integer.valueOf(n.name.split(",")[1])))
-				.collect(Collectors.toList());
-			for(int i = 0; i < maxX * factor; i++) {
-				for(int j = 0; j < maxY * factor; j++) {
-					if(shortestPath.contains(new Point(i, j)) || (i == (maxX * factor) - 1 && j == (maxY * factor) - 1)) {
-						print2("[" + bigGrid[i][j] + "]");
-					} else {
-						print2(" " + bigGrid[i][j] + " ");
-					}
-				}
-				print("");
-			}
-		}
+		shortestPath = nodes.get(new Point((maxX * factor) - 1, (maxY * factor) - 1)).shortestPath.stream()
+			.map(n -> new Point(Integer.valueOf(n.name.split(",")[0]), Integer.valueOf(n.name.split(",")[1])))
+			.collect(Collectors.toList());
+		shortestPath.add(new Point((maxX * factor - 1), (maxY * factor - 1)));
+		printGridToFile(bigGrid, shortestPath, "day15output.txt");
 		print(nodes.get(new Point((maxX * factor) - 1, (maxY * factor) - 1)).distance);
-	}
-
-	public class Graph {
-		private Set<Node> nodes = new HashSet<>();
-
-		public void addNode(Node nodeA) {
-			nodes.add(nodeA);
-		}
 	}
 
 	public class Node {
@@ -157,7 +115,7 @@ public class Day15 extends AdventOfCode {
 		}
 	}
 
-	public Graph calculateShortestPathFromSource(Graph graph, Node source) {
+	public void calculateShortestPathFromSource(Node source) {
 		source.distance = 0;
 
 		Set<Node> settledNodes = new HashSet<>();
@@ -178,7 +136,6 @@ public class Day15 extends AdventOfCode {
 			}
 			settledNodes.add(currentNode);
 		}
-		return graph;
 	}
 
 	private Node getLowestDistanceNode(Set<Node> unsettledNodes) {
