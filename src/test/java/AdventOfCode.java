@@ -96,6 +96,17 @@ public class AdventOfCode {
 		return map;
 	}
 
+	protected void printGrid(int[][] grid) {
+		int maxX = grid.length;
+		int maxY = grid[0].length;
+		for(int i = 0; i < maxX; i++) {
+			for(int j = 0; j < maxY; j++) {
+				print2(grid[i][j]);
+			}
+			print("");
+		}
+	}
+
 	protected class Point {
 		public int x;
 		public int y;
