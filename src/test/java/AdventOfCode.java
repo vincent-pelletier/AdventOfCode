@@ -1,7 +1,10 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -57,6 +60,40 @@ public class AdventOfCode {
 
 	protected int bin2dec(String binary) {
 		return Integer.parseInt(binary, 2);
+	}
+
+	protected Map<String, Long> getCharCounts(String s) {
+		Map<String, Long> map = new HashMap<>();
+		for(int i = 0; i < s.length(); i++) {
+			String c = s.charAt(i) + "";
+			if(!map.containsKey(c)) {
+				map.put(c, 0L);
+			}
+			map.put(c, map.get(c) + 1L);
+		}
+		return map;
+	}
+
+	protected void addCharCounts(Map<String, Long> initialMap, String s) {
+		Map<String, Long> charCounts = getCharCounts(s);
+		for(Entry<String, Long> entry : charCounts.entrySet()) {
+			if(!initialMap.containsKey(entry.getKey())) {
+				initialMap.put(entry.getKey(), 0L);
+			}
+			initialMap.put(entry.getKey(), initialMap.get(entry.getKey()) + entry.getValue());
+		}
+	}
+
+	protected Map<String, Long> getWordCounts(String s, String separator) {
+		String[] parts = s.split(separator);
+		Map<String, Long> map = new HashMap<>();
+		for(String part : parts) {
+			if(map.containsKey(part)) {
+				map.put(part, 0L);
+			}
+			map.put(part, map.get(part) + 1L);
+		}
+		return map;
 	}
 
 	protected class Point {

@@ -35,14 +35,7 @@ public class Day14 extends AdventOfCode {
 			newValue = "";
 		}
 
-		Map<String, Long> letters = new HashMap<>();
-		for(int i = 0; i < polymer.length(); i++) {
-			String letter = polymer.charAt(i) + "";
-			if(!letters.containsKey(letter)) {
-				letters.put(letter, 0L);
-			}
-			letters.put(letter, letters.get(letter) + 1);
-		}
+		Map<String, Long> letters = getCharCounts(polymer);
 		print(letters);
 		print(Collections.max(letters.values()) - Collections.min(letters.values()));
 
@@ -65,10 +58,7 @@ public class Day14 extends AdventOfCode {
 		for(String r : map.values()) {
 			letters.put(r, 0L);
 		}
-		for(int i = 0; i < polymer.length(); i++) {
-			String character = polymer.charAt(i) + "";
-			letters.put(character, letters.get(character) + 1L);
-		}
+		addCharCounts(letters, polymer);
 		for(int i = 0; i < polymer.length() - 1; i++) {
 			String pair = polymer.substring(i, i+2);
 			addPair(pair, 1, 20, map, letters, letterIncrementsAfterHalf);
