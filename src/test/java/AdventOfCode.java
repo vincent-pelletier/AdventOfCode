@@ -65,6 +65,30 @@ public class AdventOfCode {
 		return Integer.parseInt(binary, 2);
 	}
 
+	protected long bin2dec2(String binary) {
+		return Long.parseLong(binary, 2);
+	}
+
+	protected String hex2bin(String hex) {
+		hex = hex.replaceAll("0", "0000");
+		hex = hex.replaceAll("1", "0001");
+		hex = hex.replaceAll("2", "0010");
+		hex = hex.replaceAll("3", "0011");
+		hex = hex.replaceAll("4", "0100");
+		hex = hex.replaceAll("5", "0101");
+		hex = hex.replaceAll("6", "0110");
+		hex = hex.replaceAll("7", "0111");
+		hex = hex.replaceAll("8", "1000");
+		hex = hex.replaceAll("9", "1001");
+		hex = hex.replaceAll("A", "1010");
+		hex = hex.replaceAll("B", "1011");
+		hex = hex.replaceAll("C", "1100");
+		hex = hex.replaceAll("D", "1101");
+		hex = hex.replaceAll("E", "1110");
+		hex = hex.replaceAll("F", "1111");
+		return hex;
+	}
+
 	protected Map<String, Long> getCharCounts(String s) {
 		Map<String, Long> map = new HashMap<>();
 		for(int i = 0; i < s.length(); i++) {
