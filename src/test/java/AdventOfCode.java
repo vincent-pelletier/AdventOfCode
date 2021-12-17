@@ -189,5 +189,10 @@ public class AdventOfCode {
 		public int hashCode() {
 			return x * 1000 + y;
 		}
+
+		@Override
+		public String toString() {
+			return x + "," + y;
+		}
 	}
 }
