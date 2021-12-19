@@ -47,6 +47,10 @@ public class AdventOfCode {
 		System.out.println(o);
 	}
 
+	protected static void prints(Object o) {
+		System.out.println(o);
+	}
+
 	protected void print2(Object o) {
 		System.out.print(o);
 	}
