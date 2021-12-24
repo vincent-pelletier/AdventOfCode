@@ -1,0 +1,54 @@
+[inp w]
+[mul x 0]
+[add x z]
+[mod x 26]
+[div z 1, div z 1, div z 1, div z 26, div z 1, div z 26, div z 26, div z 1, div z 26, div z 1, div z 1, div z 26, div z 26, div z 26]
+[add x 11, add x 11, add x 15, add x -14, add x 10, add x 0, add x -6, add x 13, add x -3, add x 13, add x 15, add x -2, add x -9, add x -2]
+[eql x w]
+[eql x 0]
+[mul y 0]
+[add y 25]
+[mul y x]
+[add y 1]
+[mul z y]
+[mul y 0]
+[add y w]
+[add y 6, add y 14, add y 13, add y 1, add y 6, add y 13, add y 6, add y 3, add y 8, add y 14, add y 4, add y 7, add y 15, add y 1]
+[mul y x]
+[add z y]
+
+divZ = [1, 1, 1, 26, 1, 26, 26, 1, 26, 1, 1, 26, 26, 26]
+addX = [11, 11, 15, -14, 10, 0, -6, 13, -3, 13, 15, -2, -9, -2]
+addY = [6, 14, 13, 1, 6, 13, 6, 3, 8, 14, 4, 7, 15, 1]
+
+
+for(int i = 0; i < 14; i++) {
+	w = input				// new each time, const
+	x = z % 26				// from z
+	z = z / value (1 or 26)	// from z
+	x = x + value (random)
+	x = x == w ? 0 : 1
+	y = 25 * x (1 or 0)		// new each time
+	y = y + 1			// 1 or 26
+	z = z * y
+	y = w + value (random)
+	y = y * x (1 or 0)
+	z = z + y			// must be 0
+}
+
+for z to be 0 at the end:
+z*1or26 + (w + addY) * (x: 1 or 0) = 0
+
+w = input
+x = z % 26
+z = z / divZ
+x = x + addX
+
+if (z % 26) + addX == w 	// requis, donc si z=0, w = addX, mais tous > 9 ou < 1 :(
+							// faux, car z=0 juste après 14 it.
+	y = 0			// donc z doit être 0 aussi
+else
+	y = w + addY	// toujours positif, entre 2 et 24
+	z = z * 26		// si z == -1, -26, donne pas 0. donc 1ere condition obligatoire
+
+z = z + y
