@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -7,6 +9,8 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day9 extends AdventOfCode {
 
 	private int maxX;
@@ -15,7 +19,7 @@ public class Day9 extends AdventOfCode {
 	@Test
 	public void day9() {
 		printHeader();
-		List<String> input = readFileAsStrings("day9.txt");
+		List<String> input = readFileAsStrings();
 		maxX = input.size();
 		maxY = input.get(0).length();
 		int[][] grid = new int[maxX][maxY];

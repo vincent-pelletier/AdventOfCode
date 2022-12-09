@@ -1,3 +1,4 @@
+package common;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,27 +17,31 @@ public class AdventOfCode {
 
 	private final static String prefix = "src/test/resources/";
 
-	protected List<String> readFileAsStrings(String filename) {
+	protected String getDefaultFilename() {
+		return prefix + getClass().getName().substring(1).replace(".", "/").toLowerCase() + ".txt";
+	}
+
+	protected List<String> readFileAsStrings() {
 		List<String> strings = new ArrayList<>();
 		try {
-			Scanner reader = new Scanner(new File(prefix + filename));
+			Scanner reader = new Scanner(new File(getDefaultFilename()));
 			while (reader.hasNextLine()) {
 				strings.add(reader.nextLine());
 			}
 			reader.close();
 		} catch (FileNotFoundException e) {
-			print(filename + " not found");
+			print(getDefaultFilename() + " not found");
 			throw new IllegalArgumentException();
 		}
 		return strings;
 	}
 
-	protected List<Integer> readFileAsInts(String filename) {
-		return readFileAsStrings(filename).stream().map(Integer::valueOf).collect(Collectors.toList());
+	protected List<Integer> readFileAsInts() {
+		return readFileAsStrings().stream().map(Integer::valueOf).collect(Collectors.toList());
 	}
 
-	protected List<Integer> readSingleLineAsInts(String filename) {
-		return csv2list(readFileAsStrings(filename).get(0));
+	protected List<Integer> readSingleLineAsInts() {
+		return csv2list(readFileAsStrings().get(0));
 	}
 
 	protected List<Integer> csv2list(String csv) {
@@ -58,11 +63,15 @@ public class AdventOfCode {
 	protected void printHeader() {
 		String day = Thread.currentThread().getStackTrace()[2].getMethodName();
 		print("[" + String.valueOf(day.charAt(0)).toUpperCase() +
-				day.substring(1, 3) + " " + day.substring(3, day.length()) + "]");
+				day.substring(1, 3) + " " + i(day.substring(3, day.length())) + "]");
 	}
 
 	protected void br() {
 		print("--------");
+	}
+
+	protected int i(String s) {
+		return Integer.valueOf(s);
 	}
 
 	protected int bin2dec(String binary) {

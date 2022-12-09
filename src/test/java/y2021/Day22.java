@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -6,6 +8,8 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day22 extends AdventOfCode {
 
 	Set<Cuboid> remove = new HashSet<>();
@@ -13,7 +17,7 @@ public class Day22 extends AdventOfCode {
 	@Test
 	public void day22() {
 		printHeader();
-		List<String> input = readFileAsStrings("day22.txt");
+		List<String> input = readFileAsStrings();
 
 		Set<Cuboid> positiveCuboids = new HashSet<>();
 		for(String row : input) {
@@ -42,10 +46,6 @@ public class Day22 extends AdventOfCode {
 			}
 		}
 		print(positiveCuboids.stream().map(c -> c.getValue()).mapToLong(l -> l).sum());
-	}
-
-	private int i(String s) {
-		return Integer.valueOf(s);
 	}
 
 	private class Cuboid {

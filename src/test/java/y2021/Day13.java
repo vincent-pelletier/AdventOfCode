@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -5,12 +7,14 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day13 extends AdventOfCode {
 
 	@Test
 	public void day13() {
 		printHeader();
-		List<String> input = readFileAsStrings("day13.txt");
+		List<String> input = readFileAsStrings();
 
 		List<Point13> pts = new ArrayList<>();
 		boolean fold = false;

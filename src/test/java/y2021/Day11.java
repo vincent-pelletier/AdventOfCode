@@ -1,9 +1,13 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day11 extends AdventOfCode {
 
@@ -14,7 +18,7 @@ public class Day11 extends AdventOfCode {
 	@Test
 	public void day11() {
 		printHeader();
-		List<String> input = readFileAsStrings("day11.txt");
+		List<String> input = readFileAsStrings();
 		List<Dumbo> dumbos = new ArrayList<>();
 		Map<Point, Dumbo> map = new HashMap<>();
 		maxX = input.size();

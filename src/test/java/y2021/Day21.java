@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -5,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day21 extends AdventOfCode {
 

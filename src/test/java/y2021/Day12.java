@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,6 +10,8 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day12 extends AdventOfCode {
 
 	private int paths = 0;
@@ -15,7 +19,7 @@ public class Day12 extends AdventOfCode {
 	@Test
 	public void day12() {
 		printHeader();
-		List<String> input = readFileAsStrings("day12.txt");
+		List<String> input = readFileAsStrings();
 
 		Map<String, Node> nodeNames = new HashMap<>();
 		for(String line : input) {

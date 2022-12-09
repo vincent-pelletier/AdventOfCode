@@ -1,14 +1,18 @@
+package y2021;
+
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day8 extends AdventOfCode {
 
 	@Test
 	public void day8() {
 		printHeader();
-		List<String> input = readFileAsStrings("day8.txt");
+		List<String> input = readFileAsStrings();
 
 		List<Integer> lengths = Arrays.asList(2, 3, 4, 7);
 		int count = 0;

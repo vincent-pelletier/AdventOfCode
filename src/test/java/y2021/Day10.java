@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,12 +10,14 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day10 extends AdventOfCode {
 
 	@Test
 	public void day10() {
 		printHeader();
-		List<String> lines = readFileAsStrings("day10.txt");
+		List<String> lines = readFileAsStrings();
 
 		List<String> openDelimiters = Arrays.asList("(", "[", "{", "<");
 		List<String> closeDelimiters = Arrays.asList(")", "]", "}", ">");

@@ -1,13 +1,17 @@
+package y2021;
+
 import java.util.List;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day3 extends AdventOfCode {
 
 	@Test
 	public void day3() {
 		printHeader();
-		List<String> binaries = readFileAsStrings("day3.txt");
+		List<String> binaries = readFileAsStrings();
 
 		String gamma = "";
 		for(int i = 0; i < binaries.get(0).length(); i++) {

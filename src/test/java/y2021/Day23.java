@@ -1,4 +1,8 @@
+package y2021;
+
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day23 extends AdventOfCode {
 

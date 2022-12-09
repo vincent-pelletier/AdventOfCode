@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -6,12 +8,14 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day24 extends AdventOfCode {
 
 	@Test
 	public void day24() {
 		printHeader();
-		List<String> input = readFileAsStrings("day24.txt");
+		List<String> input = readFileAsStrings();
 
 		/*
 		inp a - Read an input value and write it to variable a.

@@ -1,14 +1,18 @@
+package y2021;
+
 import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day7 extends AdventOfCode {
 
 	@Test
 	public void day7() {
 		printHeader();
-		List<Integer> crabs = readSingleLineAsInts("day7.txt");
+		List<Integer> crabs = readSingleLineAsInts();
 
 		int max = Collections.max(crabs);
 		int min = Collections.min(crabs);

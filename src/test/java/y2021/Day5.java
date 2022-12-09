@@ -1,15 +1,19 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day5 extends AdventOfCode {
 
 	@Test
 	public void day5() {
 		printHeader();
-		List<String> input = readFileAsStrings("day5.txt");
+		List<String> input = readFileAsStrings();
 		List<Line> lines = new ArrayList<>();
 		for(String line : input) {
 			lines.add(new Line(line));

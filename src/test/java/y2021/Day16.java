@@ -1,15 +1,19 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day16 extends AdventOfCode {
 
 	@Test
 	public void day16() {
 		printHeader();
-		for(String hex : readFileAsStrings("day16.txt")) {
+		for(String hex : readFileAsStrings()) {
 			String bin = hex2bin(hex);
 			print(hex);
 			//print(bin);

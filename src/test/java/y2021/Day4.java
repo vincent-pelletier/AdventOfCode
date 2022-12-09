@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -5,12 +7,14 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day4 extends AdventOfCode {
 
 	@Test
 	public void day4() {
 		printHeader();
-		List<String> input = readFileAsStrings("day4.txt");
+		List<String> input = readFileAsStrings();
 
 		List<Integer> nums = csv2list(input.get(0));
 

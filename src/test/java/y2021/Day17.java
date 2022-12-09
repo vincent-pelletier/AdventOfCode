@@ -1,4 +1,8 @@
+package y2021;
+
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day17 extends AdventOfCode {
 
@@ -7,7 +11,7 @@ public class Day17 extends AdventOfCode {
 	@Test
 	public void day17() {
 		printHeader();
-		String input = readFileAsStrings("day17.txt").get(0);
+		String input = readFileAsStrings().get(0);
 		// target area: x=20..30, y=-10..-5
 		input = input.replace("target area:", "").replace(" ", "").replace("x=", "").replace("y=", "").replace("..", ",");
 		minX = Integer.valueOf(input.split(",")[0]);

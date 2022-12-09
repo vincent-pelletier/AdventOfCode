@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -6,12 +8,14 @@ import java.util.Map.Entry;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day14 extends AdventOfCode {
 
 	@Test
 	public void day14() {
 		printHeader();
-		List<String> input = readFileAsStrings("day14.txt");
+		List<String> input = readFileAsStrings();
 
 		String polymer = input.get(0);
 

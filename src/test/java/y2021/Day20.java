@@ -1,13 +1,17 @@
+package y2021;
+
 import java.util.List;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day20 extends AdventOfCode {
 
 	@Test
 	public void day20() {
 		printHeader();
-		List<String> input = readFileAsStrings("day20.txt");
+		List<String> input = readFileAsStrings();
 
 		String algorithm = input.get(0).replace(".", "0").replace("#", "1");
 		int first = ctoi(algorithm.charAt(0));

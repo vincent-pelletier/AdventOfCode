@@ -1,7 +1,11 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day25 extends AdventOfCode {
 
@@ -11,7 +15,7 @@ public class Day25 extends AdventOfCode {
 	@Test
 	public void day25() {
 		printHeader();
-		List<String> input = readFileAsStrings("day25.txt");
+		List<String> input = readFileAsStrings();
 		maxX = input.get(0).length();
 		maxY = input.size();
 

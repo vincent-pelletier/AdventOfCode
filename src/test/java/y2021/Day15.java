@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -9,12 +11,14 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day15 extends AdventOfCode {
 
 	@Test
 	public void day15() {
 		printHeader();
-		List<String> input = readFileAsStrings("day15.txt");
+		List<String> input = readFileAsStrings();
 		int maxX = input.size();
 		int maxY = input.get(0).length();
 		int[][] grid = new int[maxX][maxY];
@@ -91,7 +95,7 @@ public class Day15 extends AdventOfCode {
 			.map(n -> new Point(Integer.valueOf(n.name.split(",")[0]), Integer.valueOf(n.name.split(",")[1])))
 			.collect(Collectors.toList());
 		shortestPath.add(new Point((maxX * factor - 1), (maxY * factor - 1)));
-		printGridToFile(bigGrid, shortestPath, "day15output.txt");
+		printGridToFile(bigGrid, shortestPath, "2021/day15output.txt");
 		print(nodes.get(new Point((maxX * factor) - 1, (maxY * factor) - 1)).distance);
 	}
 

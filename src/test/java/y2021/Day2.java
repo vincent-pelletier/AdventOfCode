@@ -1,13 +1,17 @@
+package y2021;
+
 import java.util.List;
 
 import org.junit.Test;
+
+import common.AdventOfCode;
 
 public class Day2 extends AdventOfCode {
 
 	@Test
 	public void day2() {
 		printHeader();
-		List<String> steps = readFileAsStrings("day2.txt");
+		List<String> steps = readFileAsStrings();
 
 		int position = 0;
 		int depth = 0;

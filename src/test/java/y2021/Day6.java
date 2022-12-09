@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -5,12 +7,14 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day6 extends AdventOfCode {
 
 	@Test
 	public void day6() {
 		printHeader();
-		List<Integer> initialFishes = readSingleLineAsInts("day6.txt");
+		List<Integer> initialFishes = readSingleLineAsInts();
 
 		List<AtomicInteger> fishes = new ArrayList<>();
 		for(Integer fish : initialFishes) {

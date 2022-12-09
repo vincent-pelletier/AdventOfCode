@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -7,12 +9,14 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day19 extends AdventOfCode {
 
 	@Test
 	public void day19() {
 		printHeader();
-		List<String> input = readFileAsStrings("day19.txt");
+		List<String> input = readFileAsStrings();
 
 		List<Scanner> scanners = new ArrayList<>();
 		Scanner last = null;

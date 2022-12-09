@@ -1,3 +1,5 @@
+package y2021;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,12 +10,14 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
+import common.AdventOfCode;
+
 public class Day18 extends AdventOfCode {
 
 	@Test
 	public void day18() {
 		printHeader();
-		List<String> input = readFileAsStrings("day18.txt");
+		List<String> input = readFileAsStrings();
 		List<SnailfishNumber> sfns = input.stream().map(SnailfishNumber::from).collect(Collectors.toList());
 
 		SnailfishNumber sfn = sfns.get(0);
