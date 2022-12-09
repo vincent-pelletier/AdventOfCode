@@ -14,7 +14,6 @@ public class Day14 extends AdventOfCode {
 
 	@Test
 	public void day14() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		String polymer = input.get(0);

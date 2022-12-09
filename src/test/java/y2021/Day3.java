@@ -10,7 +10,6 @@ public class Day3 extends AdventOfCode {
 
 	@Test
 	public void day3() {
-		printHeader();
 		List<String> binaries = readFileAsStrings();
 
 		String gamma = "";

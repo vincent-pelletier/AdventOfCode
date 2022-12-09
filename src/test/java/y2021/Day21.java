@@ -16,7 +16,6 @@ public class Day21 extends AdventOfCode {
 
 	@Test
 	public void day21() {
-		printHeader();
 		int p1pos = 8;
 		int p2pos = 10;
 		int p1pts = 0;

@@ -14,7 +14,6 @@ public class Day24 extends AdventOfCode {
 
 	@Test
 	public void day24() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		/*

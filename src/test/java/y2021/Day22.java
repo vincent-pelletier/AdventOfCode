@@ -16,7 +16,6 @@ public class Day22 extends AdventOfCode {
 
 	@Test
 	public void day22() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		Set<Cuboid> positiveCuboids = new HashSet<>();

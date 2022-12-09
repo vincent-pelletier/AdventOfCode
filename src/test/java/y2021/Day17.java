@@ -10,7 +10,6 @@ public class Day17 extends AdventOfCode {
 
 	@Test
 	public void day17() {
-		printHeader();
 		String input = readFileAsStrings().get(0);
 		// target area: x=20..30, y=-10..-5
 		input = input.replace("target area:", "").replace(" ", "").replace("x=", "").replace("y=", "").replace("..", ",");

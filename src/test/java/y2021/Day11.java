@@ -17,7 +17,6 @@ public class Day11 extends AdventOfCode {
 
 	@Test
 	public void day11() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 		List<Dumbo> dumbos = new ArrayList<>();
 		Map<Point, Dumbo> map = new HashMap<>();

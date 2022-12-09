@@ -14,7 +14,6 @@ public class Day25 extends AdventOfCode {
 
 	@Test
 	public void day25() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 		maxX = input.get(0).length();
 		maxY = input.size();

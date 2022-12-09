@@ -13,7 +13,6 @@ public class Day6 extends AdventOfCode {
 
 	@Test
 	public void day6() {
-		printHeader();
 		List<Integer> initialFishes = readSingleLineAsInts();
 
 		List<AtomicInteger> fishes = new ArrayList<>();

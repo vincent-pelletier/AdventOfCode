@@ -10,7 +10,6 @@ public class Day20 extends AdventOfCode {
 
 	@Test
 	public void day20() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		String algorithm = input.get(0).replace(".", "0").replace("#", "1");

@@ -18,7 +18,6 @@ public class Day12 extends AdventOfCode {
 
 	@Test
 	public void day12() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		Map<String, Node> nodeNames = new HashMap<>();

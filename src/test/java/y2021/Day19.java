@@ -15,7 +15,6 @@ public class Day19 extends AdventOfCode {
 
 	@Test
 	public void day19() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		List<Scanner> scanners = new ArrayList<>();

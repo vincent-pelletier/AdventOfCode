@@ -10,7 +10,6 @@ public class Day1 extends AdventOfCode {
 
 	@Test
 	public void day1() {
-		printHeader();
 		List<Integer> values = readFileAsInts();
 
 		int increment = 0;

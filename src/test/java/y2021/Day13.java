@@ -13,7 +13,6 @@ public class Day13 extends AdventOfCode {
 
 	@Test
 	public void day13() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		List<Point13> pts = new ArrayList<>();

@@ -11,7 +11,6 @@ public class Day7 extends AdventOfCode {
 
 	@Test
 	public void day7() {
-		printHeader();
 		List<Integer> crabs = readSingleLineAsInts();
 
 		int max = Collections.max(crabs);

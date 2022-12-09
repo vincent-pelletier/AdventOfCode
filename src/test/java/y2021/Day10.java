@@ -16,7 +16,6 @@ public class Day10 extends AdventOfCode {
 
 	@Test
 	public void day10() {
-		printHeader();
 		List<String> lines = readFileAsStrings();
 
 		List<String> openDelimiters = Arrays.asList("(", "[", "{", "<");

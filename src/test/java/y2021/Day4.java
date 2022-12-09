@@ -13,7 +13,6 @@ public class Day4 extends AdventOfCode {
 
 	@Test
 	public void day4() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 
 		List<Integer> nums = csv2list(input.get(0));

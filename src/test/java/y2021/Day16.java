@@ -12,7 +12,6 @@ public class Day16 extends AdventOfCode {
 
 	@Test
 	public void day16() {
-		printHeader();
 		for(String hex : readFileAsStrings()) {
 			String bin = hex2bin(hex);
 			print(hex);

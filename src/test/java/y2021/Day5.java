@@ -12,7 +12,6 @@ public class Day5 extends AdventOfCode {
 
 	@Test
 	public void day5() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 		List<Line> lines = new ArrayList<>();
 		for(String line : input) {

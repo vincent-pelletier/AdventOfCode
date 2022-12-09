@@ -10,7 +10,6 @@ public class Day2 extends AdventOfCode {
 
 	@Test
 	public void day2() {
-		printHeader();
 		List<String> steps = readFileAsStrings();
 
 		int position = 0;

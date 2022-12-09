@@ -16,7 +16,6 @@ public class Day18 extends AdventOfCode {
 
 	@Test
 	public void day18() {
-		printHeader();
 		List<String> input = readFileAsStrings();
 		List<SnailfishNumber> sfns = input.stream().map(SnailfishNumber::from).collect(Collectors.toList());
 
