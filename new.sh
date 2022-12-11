@@ -17,6 +17,7 @@ else
 fi
 
 touch src/test/resources/$YEAR/day$DAY.txt
+dos2unix src/test/resources/$YEAR/day$DAY.txt
 
 echo """package y$YEAR;
 
