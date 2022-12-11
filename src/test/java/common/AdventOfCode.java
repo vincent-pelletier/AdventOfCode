@@ -13,11 +13,13 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.junit.After;
 import org.junit.Before;
 
 public class AdventOfCode {
 
 	private final static String prefix = "src/test/resources/";
+	private long start;
 
 	protected String getDefaultFilename() {
 		return prefix + getClass().getName().substring(1).replace(".", "/").toLowerCase() + ".txt";
@@ -28,6 +30,12 @@ public class AdventOfCode {
 		String day = getClass().getSimpleName();
 		print("[" + String.valueOf(day.charAt(0)).toUpperCase() +
 				day.substring(1, 3) + " " + i(day.substring(3, day.length())) + "]");
+		start = System.currentTimeMillis();
+	}
+
+	@After
+	public void computeDuration() {
+		print("(" + (System.currentTimeMillis() - start) + " ms)");
 	}
 
 	protected List<String> readFileAsStrings() {
