@@ -65,6 +65,10 @@ public class AdventOfCode {
 		return Stream.of(csv.split(",")).map(Integer::valueOf).collect(Collectors.toList());
 	}
 
+	protected List<Long> csv2longs(String csv) {
+		return Stream.of(csv.split(",")).map(Long::valueOf).collect(Collectors.toList());
+	}
+
 	protected void print(Object o) {
 		System.out.println(o);
 	}
