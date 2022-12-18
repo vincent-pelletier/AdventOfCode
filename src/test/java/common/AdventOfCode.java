@@ -28,7 +28,7 @@ public class AdventOfCode {
 	@Before
 	public void printHeader() {
 		String day = getClass().getSimpleName();
-		print("[" + String.valueOf(day.charAt(0)).toUpperCase() +
+		print("[" + charAt(day, 0).toUpperCase() +
 				day.substring(1, 3) + " " + i(day.substring(3, day.length())) + "]");
 		start = System.currentTimeMillis();
 	}
@@ -89,6 +89,10 @@ public class AdventOfCode {
 		return Integer.valueOf(s);
 	}
 
+	protected String charAt(String s, int idx) {
+		return s.charAt(idx) + "";
+	}
+
 	protected int bin2dec(String binary) {
 		return Integer.parseInt(binary, 2);
 	}
@@ -120,7 +124,7 @@ public class AdventOfCode {
 	protected Map<String, Long> getCharCounts(String s) {
 		Map<String, Long> map = new HashMap<>();
 		for(int i = 0; i < s.length(); i++) {
-			String c = s.charAt(i) + "";
+			String c = charAt(s, i);
 			if(!map.containsKey(c)) {
 				map.put(c, 0L);
 			}
