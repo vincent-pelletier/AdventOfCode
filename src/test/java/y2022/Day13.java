@@ -114,8 +114,8 @@ public class Day13 extends AdventOfCode {
 	 *
 	 */
 	class Packet {
-		static int VALUE_LIST = -2;
-		static int VALUE_EMPTY = -1;
+		static final int VALUE_LIST = -2;
+		static final int VALUE_EMPTY = -1;
 
 		List<Packet> list = new ArrayList<>();
 		final int value;
